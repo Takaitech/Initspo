@@ -1,10 +1,16 @@
-import Nav from '../components/nav'
+import Header from '../src/components/Header/Header'
+import Nav from '../src/components/Nav/Nav'
+import Gallery from '../src/components/Gallery/Gallery'
+import Sidebar from '../src/components/Sidebar/Sidebar'
 
 const Home = () => (
-    <div >
+   <div>
+        <Header></Header>
         <Nav></Nav>
-        Welcome
+        <Gallery></Gallery>
+        <Sidebar></Sidebar>
     </div>
 )
+
 
 export default Home
