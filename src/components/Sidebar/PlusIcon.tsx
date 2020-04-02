@@ -12,10 +12,10 @@ const PlusIcon = () => {
 }
 
 const IconWrapper = styled.div`
-    height: 75px;
-    width: 75px;
+    height: 60px;
+    width: 60px;
     position: absolute;
-    bottom: 25px;
+    bottom: 30px;
     right: 50%;
     transform: translateX(50%);
 `

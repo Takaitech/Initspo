@@ -1,5 +1,29 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _taggedTemplateLiteral; });
+function _taggedTemplateLiteral(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  return Object.freeze(Object.defineProperties(strings, {
+    raw: {
+      value: Object.freeze(raw)
+    }
+  }));
+}
+
+/***/ }),
+
 /***/ "./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js ***!
@@ -3449,6 +3473,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var gridContent = [{
   photo: "https://cdn.gamer-network.net/2018/usgamer/nier-automata_key-art_hed.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/nier-automata-postmortem-yoko-taro-platinumgames.jpg"
+}, {
+  photo: "https://cdn.inprnt.com/thumbs/3b/d7/3bd78abfe28bffa17d97538647cde5e1@2x.jpg?response-cache-control=max-age=2628000"
+}, {
+  photo: "https://cdn.gamer-network.net/2018/usgamer/nier-automata_key-art_hed.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/nier-automata-postmortem-yoko-taro-platinumgames.jpg"
+}, {
+  photo: "https://cdn.gamer-network.net/2018/usgamer/nier-automata_key-art_hed.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/nier-automata-postmortem-yoko-taro-platinumgames.jpg"
 }];
 
 var Gallery = function Gallery() {
@@ -3456,7 +3486,7 @@ var Gallery = function Gallery() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 14,
       columnNumber: 9
     }
   }, __jsx(_Grid__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -3464,7 +3494,7 @@ var Gallery = function Gallery() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 15,
       columnNumber: 13
     }
   }));
@@ -3473,7 +3503,7 @@ var Gallery = function Gallery() {
 var GalleryContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Gallery__GalleryContainer",
   componentId: "sc-68gvp1-0"
-})(["width:calc(100vw - 301px);height:calc(100vh - 125px);margin:0 auto;border:#E8E8E8 1px solid;"]);
+})(["width:calc(100vw - 301px);height:calc(100vh - 90px);margin:0 auto;border:#E8E8E8 1px solid;"]);
 /* harmony default export */ __webpack_exports__["default"] = (Gallery);
 
 /***/ }),
@@ -3487,26 +3517,100 @@ var GalleryContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"]
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _GridBox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GridBox */ "./src/components/Gallery/GridBox.tsx");
+
+
 var _this = undefined,
     _jsxFileName = "/Users/takaitech/Takai-Tech/initspo/src/components/Gallery/Grid.tsx";
 
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-var Grid = function Grid(GridContent) {
-  return __jsx("ul", {
+function _templateObject() {
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n    text-align: left;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+
+var Grid = function Grid(_ref) {
+  var GridContent = _ref.GridContent;
+  return __jsx(GridContainer, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 15,
       columnNumber: 9
+    }
+  }, GridContent.map(function (content, index) {
+    return __jsx(_GridBox__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      key: index,
+      BoxContent: content,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17,
+        columnNumber: 17
+      }
+    });
+  }));
+};
+
+var GridContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].ul(_templateObject());
+/* harmony default export */ __webpack_exports__["default"] = (Grid);
+
+/***/ }),
+
+/***/ "./src/components/Gallery/GridBox.tsx":
+/*!********************************************!*\
+  !*** ./src/components/Gallery/GridBox.tsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _this = undefined,
+    _jsxFileName = "/Users/takaitech/Takai-Tech/initspo/src/components/Gallery/GridBox.tsx";
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var GridBox = function GridBox(_ref) {
+  var BoxContent = _ref.BoxContent;
+  console.log(BoxContent.photo);
+  var BoxContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li.withConfig({
+    displayName: "GridBox__BoxContainer",
+    componentId: "sc-1xnupem-0"
+  })(["width:33.3%;height:200px;background-image:url(", ");background-size:contain;list-style:none;display:inline-block;background-repeat:no-repeat;float:left;background-position:center;"], function (props) {
+    return props.url;
+  });
+  return __jsx(BoxContainer, {
+    url: BoxContent.photo,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 13
     }
   });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Grid);
+/* harmony default export */ __webpack_exports__["default"] = (GridBox);
 
 /***/ }),
 
@@ -3537,13 +3641,37 @@ var Header = function Header() {
       lineNumber: 7,
       columnNumber: 5
     }
-  });
+  }, __jsx(Logo, {
+    src: "images/Initspo-Min-Logo.png",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 9
+    }
+  }), __jsx(LogoExtended, {
+    src: "images/Logo-extended.png",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 9
+    }
+  }));
 };
 
 var HeaderContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Header__HeaderContainer",
   componentId: "sc-9h06xe-0"
-})(["height:125px;"]);
+})(["height:90px;position:relative;z-index:2;"]);
+var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.withConfig({
+  displayName: "Header__Logo",
+  componentId: "sc-9h06xe-1"
+})(["width:250px;position:absolute;bottom:-9px;left:5px;"]);
+var LogoExtended = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.withConfig({
+  displayName: "Header__LogoExtended",
+  componentId: "sc-9h06xe-2"
+})(["position:absolute;bottom:-195px;left:47px;width:61px;"]);
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
 /***/ }),
@@ -3573,6 +3701,50 @@ var CollectionsButton = function CollectionsButton() {
       targeted = _useState[0],
       setTargeted = _useState[1];
 
+  var CollectionsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+    displayName: "CollectionsButton__CollectionsContainer",
+    componentId: "sc-13sskwz-0"
+  })(["position:relative;top:50%;transform:translatey(-50%);height:60px;width:60px;margin:auto;display:flex;"]);
+  var Shape = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+    displayName: "CollectionsButton__Shape",
+    componentId: "sc-13sskwz-1"
+  })(["background-color:", ";border-color:", ";height:8px;width:8px;border-color:transparent transparent ", " transparent;_border-color:#ffffff #ffffff #DBDBDB #ffffff;"], targeted ? "#000000" : "#DBDBDB", targeted ? "#000000" : "#DBDBDB", targeted ? "#000000" : "#DBDBDB");
+  var TopSquare = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__TopSquare",
+    componentId: "sc-13sskwz-2"
+  })(["position:absolute;"]);
+  var MiddleSquare = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__MiddleSquare",
+    componentId: "sc-13sskwz-3"
+  })(["position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);"]);
+  var BottomSquare = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__BottomSquare",
+    componentId: "sc-13sskwz-4"
+  })(["position:absolute;right:0;bottom:0%;"]);
+  var TopCircle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__TopCircle",
+    componentId: "sc-13sskwz-5"
+  })(["position:absolute;left:50%;top:0;border-radius:50%;transform:translateX(-50%);"]);
+  var LeftCircle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__LeftCircle",
+    componentId: "sc-13sskwz-6"
+  })(["position:absolute;top:50%;border-radius:50%;transform:translateY(-50%);"]);
+  var RightCircle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__RightCircle",
+    componentId: "sc-13sskwz-7"
+  })(["position:absolute;top:50%;right:0;border-radius:50%;transform:translateY(-50%);"]);
+  var BottomCircle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__BottomCircle",
+    componentId: "sc-13sskwz-8"
+  })(["position:absolute;bottom:0;left:50%;border-radius:50%;transform:translateX(-50%);"]);
+  var LeftTriangle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__LeftTriangle",
+    componentId: "sc-13sskwz-9"
+  })(["background-color:unset;position:absolute;bottom:0;left:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
+  var RightTriangle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
+    displayName: "CollectionsButton__RightTriangle",
+    componentId: "sc-13sskwz-10"
+  })(["background-color:unset;position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
   return __jsx(CollectionsContainer, {
     onMouseEnter: function onMouseEnter() {
       return setTargeted(true);
@@ -3583,120 +3755,114 @@ var CollectionsButton = function CollectionsButton() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 103,
       columnNumber: 9
     }
   }, __jsx(TopSquare, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 106,
       columnNumber: 17
     }
   }), __jsx(MiddleSquare, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 107,
       columnNumber: 17
     }
   }), __jsx(BottomSquare, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 108,
       columnNumber: 17
     }
   }), __jsx(TopCircle, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 109,
       columnNumber: 17
     }
   }), __jsx(LeftCircle, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 110,
       columnNumber: 17
     }
   }), __jsx(RightCircle, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 111,
       columnNumber: 17
     }
   }), __jsx(BottomCircle, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 112,
       columnNumber: 17
     }
   }), __jsx(LeftTriangle, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 113,
       columnNumber: 17
     }
   }), __jsx(RightTriangle, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 114,
       columnNumber: 17
     }
   }));
 };
 
-var CollectionsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "CollectionsButton__CollectionsContainer",
-  componentId: "sc-13sskwz-0"
-})(["position:relative;top:50%;transform:translatey(-50%);height:60px;width:60px;margin:auto;display:flex;"]);
-var Shape = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "CollectionsButton__Shape",
-  componentId: "sc-13sskwz-1"
-})(["background-color:#DBDBDB;border-color:#DBDBDB;height:8px;width:8px;border-color:transparent transparent #DBDBDB transparent;_border-color:#ffffff #ffffff #DBDBDB #ffffff;"]);
-var TopSquare = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__TopSquare",
-  componentId: "sc-13sskwz-2"
-})(["position:absolute;"]);
-var MiddleSquare = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__MiddleSquare",
-  componentId: "sc-13sskwz-3"
-})(["position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);"]);
-var BottomSquare = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__BottomSquare",
-  componentId: "sc-13sskwz-4"
-})(["position:absolute;right:0;bottom:0%;"]);
-var TopCircle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__TopCircle",
-  componentId: "sc-13sskwz-5"
-})(["position:absolute;left:50%;top:0;border-radius:50%;transform:translateX(-50%);"]);
-var LeftCircle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__LeftCircle",
-  componentId: "sc-13sskwz-6"
-})(["position:absolute;top:50%;border-radius:50%;transform:translateY(-50%);"]);
-var RightCircle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__RightCircle",
-  componentId: "sc-13sskwz-7"
-})(["position:absolute;top:50%;right:0;border-radius:50%;transform:translateY(-50%);"]);
-var BottomCircle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__BottomCircle",
-  componentId: "sc-13sskwz-8"
-})(["position:absolute;bottom:0;left:50%;border-radius:50%;transform:translateX(-50%);"]);
-var LeftTriangle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__LeftTriangle",
-  componentId: "sc-13sskwz-9"
-})(["background-color:unset;position:absolute;bottom:0;left:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
-var RightTriangle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Shape).withConfig({
-  displayName: "CollectionsButton__RightTriangle",
-  componentId: "sc-13sskwz-10"
-})(["background-color:unset;position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
 /* harmony default export */ __webpack_exports__["default"] = (CollectionsButton);
+
+/***/ }),
+
+/***/ "./src/components/Nav/Info.tsx":
+/*!*************************************!*\
+  !*** ./src/components/Nav/Info.tsx ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _this = undefined,
+    _jsxFileName = "/Users/takaitech/Takai-Tech/initspo/src/components/Nav/Info.tsx";
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var Info = function Info() {
+  return __jsx(Button, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 13
+    }
+  }, "Info Icon");
+};
+
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
+  displayName: "Info__Button",
+  componentId: "sc-10549xh-0"
+})(["width:60px;height:60px;position:absolute;bottom:100px;left:50%;transform:translateX(-50%);"]);
+/* harmony default export */ __webpack_exports__["default"] = (Info);
 
 /***/ }),
 
@@ -3713,6 +3879,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _CollectionsButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CollectionsButton */ "./src/components/Nav/CollectionsButton.tsx");
+/* harmony import */ var _Info__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Info */ "./src/components/Nav/Info.tsx");
+/* harmony import */ var _Settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Settings */ "./src/components/Nav/Settings.tsx");
 var _this = undefined,
     _jsxFileName = "/Users/takaitech/Takai-Tech/initspo/src/components/Nav/Nav.tsx";
 
@@ -3721,26 +3889,42 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
 var Nav = function Nav() {
   return __jsx(NavContainer, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 9,
       columnNumber: 5
     }
   }, __jsx(Logo, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 10,
       columnNumber: 9
     }
   }), __jsx(_CollectionsButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 11,
+      columnNumber: 9
+    }
+  }), __jsx(_Info__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 9
+    }
+  }), __jsx(_Settings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
       columnNumber: 9
     }
   }));
@@ -3749,12 +3933,50 @@ var Nav = function Nav() {
 var NavContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Nav__NavContainer",
   componentId: "r5l1g2-0"
-})(["position:fixed;left:0;top:0;bottom:0;height:100vh;width:150px;background-color:#f8f8f8;text-align:center;"]);
+})(["position:fixed;left:0;top:0;bottom:0;height:100vh;width:150px;background-color:#f8f8f8;text-align:center;z-index:1;"]);
 var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].svg.withConfig({
   displayName: "Nav__Logo",
   componentId: "r5l1g2-1"
 })(["position:absolute;"]);
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
+
+/***/ }),
+
+/***/ "./src/components/Nav/Settings.tsx":
+/*!*****************************************!*\
+  !*** ./src/components/Nav/Settings.tsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _this = undefined,
+    _jsxFileName = "/Users/takaitech/Takai-Tech/initspo/src/components/Nav/Settings.tsx";
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var Settings = function Settings() {
+  return __jsx(Button, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 13
+    }
+  }, "Settings Icon");
+};
+
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
+  displayName: "Settings__Button",
+  componentId: "v85orh-0"
+})(["width:60px;height:60px;position:absolute;bottom:30px;left:50%;transform:translateX(-50%);"]);
+/* harmony default export */ __webpack_exports__["default"] = (Settings);
 
 /***/ }),
 
@@ -3811,7 +4033,7 @@ var PlusIcon = function PlusIcon() {
 var IconWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "PlusIcon__IconWrapper",
   componentId: "wk5478-0"
-})(["height:75px;width:75px;position:absolute;bottom:25px;right:50%;transform:translateX(50%);"]);
+})(["height:60px;width:60px;position:absolute;bottom:30px;right:50%;transform:translateX(50%);"]);
 /* harmony default export */ __webpack_exports__["default"] = (PlusIcon);
 
 /***/ }),
