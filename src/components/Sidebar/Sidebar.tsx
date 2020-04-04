@@ -12,27 +12,31 @@ const Sidebar = () => {
 }
 
 const SidebarContainer = styled.div`
-    height: calc( 100vh - 125px);
+    background-color: #F8F8F8;
+    height: calc( 100vh - 90px);
     width: 150px;
     position: absolute;
     right: 0;
     bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 `
 
 const ScrollBar = styled.div`
-        position: absolute;
-        right: 50%;
-        transform: translateX(50%);
-        bottom: 125px;
-        height: 30vh;
+        height: 15vh;
         width: 37px;
         background-color: #DBDBDB;
+        margin: 0 auto;
 `
 
 const CollectionTitle = styled.h1`
-    transform-origin: 57.5px 38px;
-    transform:rotate(90deg);  
-    width: 35vh; 
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    line-height: 2em;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    min-height: 40vh;
 `
 
 export default Sidebar

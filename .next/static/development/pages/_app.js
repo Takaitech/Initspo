@@ -359,7 +359,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 exports = module.exports = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "body {\n    margin: 0;\n    background-color: #F8F8F8;\n}", "",{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,yBAAyB;AAC7B","file":"styles.css","sourcesContent":["body {\n    margin: 0;\n    background-color: #F8F8F8;\n}"]}]);
+exports.push([module.i, "body {\n    margin: 0;\n    background-color: #F8F8F8;\n    overflow: hidden;\n}", "",{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,yBAAyB;IACzB,gBAAgB;AACpB","file":"styles.css","sourcesContent":["body {\n    margin: 0;\n    background-color: #F8F8F8;\n    overflow: hidden;\n}"]}]);
 
 
 /***/ }),
