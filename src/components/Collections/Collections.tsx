@@ -19,8 +19,6 @@ const Collections:React.FC = () => {
             width: calc(100vw - 301px);
             height: calc(100vh - 90px);
             margin: 0 auto;
-            text-align: center;
-            margin-left: 150px;
         `;
 
     return(
