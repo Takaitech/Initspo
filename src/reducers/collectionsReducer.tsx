@@ -12,6 +12,7 @@ type InitType =
     current?: string;
     open?: boolean;
 }
+
     
 export const collectionsReducer = (initState: InitType , action:Actions) => {
     switch(action.type) {

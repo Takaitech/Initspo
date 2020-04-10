@@ -1,4 +1,4 @@
-import Nav from '../src/components/nav'
+import Nav from '../src/components/Nav/Nav'
 
 const Login = () => (
     <div >

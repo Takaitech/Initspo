@@ -254,12 +254,12 @@ const Collections = () => {
   const CollectionsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
     displayName: "Collections__CollectionsContainer",
     componentId: "tqlujw-0"
-  })(["display:", ";width:calc(100vw - 301px);height:calc(100vh - 90px);margin:0 auto;text-align:center;margin-left:150px;"], collections.open ? 'block' : "none");
+  })(["display:", ";width:calc(100vw - 301px);height:calc(100vh - 90px);margin:0 auto;"], collections.open ? 'block' : "none");
   return __jsx(CollectionsContainer, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 25,
       columnNumber: 9
     }
   }, __jsx(_Grid__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -267,7 +267,7 @@ const Collections = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 26,
       columnNumber: 13
     }
   }));

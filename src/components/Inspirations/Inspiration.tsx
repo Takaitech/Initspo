@@ -15,7 +15,7 @@ const Inspiration: React.FC<Props> = ({content}) => {
             width: ${content.dimensions.width /4}px;
             /* max-width: calc(100vw - 301px); */
             height: ${content.dimensions.height/4}px;
-            max-height: 150px;
+            max-height: 150px; 
             margin: 10px;
             background-image: url(${props=> props.url});
             background-size: cover;
