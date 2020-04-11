@@ -721,9 +721,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _contexts_CollectionsContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../contexts/CollectionsContext */ "./src/contexts/CollectionsContext.tsx");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap */ "gsap");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(gsap__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/takaitech/Takai-Tech/initspo/src/components/Nav/ShowCollections.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -737,6 +740,25 @@ const ShowCollections = () => {
     collections,
     dispatch
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_contexts_CollectionsContext__WEBPACK_IMPORTED_MODULE_2__["CollectionsContext"]);
+  let button = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null); // console.log(button)
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {// console.log(button.current)
+  }, [button]); // console.log(clickAnimation)
+
+  let handleClick = () => {
+    console.log(button.current);
+    dispatch({
+      type: "openCollections",
+      boolean: !collections.open
+    });
+    console.log(button.current);
+    gsap__WEBPACK_IMPORTED_MODULE_3__["TweenMax"].to(button.current, 2, {
+      x: 400,
+      ease: gsap__WEBPACK_IMPORTED_MODULE_3__["Power3"].easeIn
+    });
+    console.log("ran"); // clickAnimation.play()
+  };
+
   const CollectionsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
     displayName: "ShowCollections__CollectionsContainer",
     componentId: "sc-19w2inw-0"
@@ -782,79 +804,77 @@ const ShowCollections = () => {
     componentId: "sc-19w2inw-10"
   })(["background-color:unset;position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
   return __jsx(CollectionsContainer, {
-    onClick: e => dispatch({
-      type: "openCollections",
-      boolean: !collections.open
-    }),
+    ref: button,
+    onClick: handleClick,
     onMouseEnter: () => setTargeted(true),
     onMouseLeave: () => setTargeted(false),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 125,
       columnNumber: 9
     }
   }, __jsx(TopSquare, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 129,
       columnNumber: 17
     }
   }), __jsx(MiddleSquare, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 130,
       columnNumber: 17
     }
   }), __jsx(BottomSquare, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 131,
       columnNumber: 17
     }
   }), __jsx(TopCircle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 132,
       columnNumber: 17
     }
   }), __jsx(LeftCircle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 133,
       columnNumber: 17
     }
   }), __jsx(RightCircle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 134,
       columnNumber: 17
     }
   }), __jsx(BottomCircle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 135,
       columnNumber: 17
     }
   }), __jsx(LeftTriangle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 136,
       columnNumber: 17
     }
   }), __jsx(RightTriangle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 137,
       columnNumber: 17
     }
   }));
@@ -1076,6 +1096,17 @@ const collectionsReducer = (initState, action) => {
 
 module.exports = __webpack_require__(/*! /Users/takaitech/Takai-Tech/initspo/pages/index.tsx */"./pages/index.tsx");
 
+
+/***/ }),
+
+/***/ "gsap":
+/*!***********************!*\
+  !*** external "gsap" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("gsap");
 
 /***/ }),
 

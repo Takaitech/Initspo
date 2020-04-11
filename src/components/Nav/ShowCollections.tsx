@@ -1,11 +1,32 @@
 import styled from 'styled-components'
-import { useState, useContext } from 'react'
+import { useState, useContext, useRef, useEffect } from 'react'
 import { CollectionsContext } from "../../contexts/CollectionsContext";
+import { TweenMax, TimelineMax, Power3, Elastic, Back } from 'gsap'
 
 
 const ShowCollections: React.FC= () => {
     const [targeted, setTargeted] = useState<boolean>(false);
     const { collections, dispatch } = useContext(CollectionsContext);
+
+    let button = useRef<HTMLDivElement>(null);
+    // console.log(button)
+
+    useEffect(() => {
+        // console.log(button.current)
+       
+    },[button])
+
+    // console.log(clickAnimation)
+    let handleClick = () => {
+        console.log(button.current)
+
+        dispatch({type: "openCollections", boolean: !collections.open})
+        console.log(button.current)
+        TweenMax.to(button.current, 2, {x: 400,
+            ease: Power3.easeIn});
+            console.log("ran")
+        // clickAnimation.play()
+    }
 
     const CollectionsContainer = styled.div`
     position: relative;
@@ -101,8 +122,8 @@ const ShowCollections: React.FC= () => {
     ` 
 
     return (
-        <CollectionsContainer 
-            onClick={(e) => dispatch({type: "openCollections", boolean: !collections.open})}
+        <CollectionsContainer ref={button}
+            onClick={handleClick}
             onMouseEnter={() => setTargeted(true)}
             onMouseLeave={() => setTargeted(false)} >
                 <TopSquare></TopSquare>
