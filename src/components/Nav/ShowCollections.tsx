@@ -3,32 +3,64 @@ import { useState, useContext, useRef, useEffect } from 'react'
 import { CollectionsContext } from "../../contexts/CollectionsContext";
 import { TweenMax, TimelineMax, Power3, Elastic, Back } from 'gsap'
 
+interface IProps {
+    targeted: boolean;
+    collections: {
+        collections: [];
+        current: string;
+        open: boolean;
+    };
+};
 
 const ShowCollections: React.FC= () => {
-    const [targeted, setTargeted] = useState<boolean>(false);
+    const [ targeted, setTargeted ] = useState<boolean>(false);
     const { collections, dispatch } = useContext(CollectionsContext);
 
     let button = useRef<HTMLDivElement>(null);
     // console.log(button)
 
+
+    // let Anim = TweenMax.to(button.current, 2, {position: 'fixed', xPercent: '-50', left: '50%',
+    //     ease: Power3.easeIn, paused: true});
+
+    //     console.log(button)
     useEffect(() => {
-        // console.log(button.current)
-       
-    },[button])
+
+        // if(collections.open === true) {
+        //     Anim.play()
+        // }else {
+        //     Anim.reverse()
+        // }
+    },[collections])
 
     // console.log(clickAnimation)
     let handleClick = () => {
-        console.log(button.current)
-
         dispatch({type: "openCollections", boolean: !collections.open})
-        console.log(button.current)
-        TweenMax.to(button.current, 2, {x: 400,
-            ease: Power3.easeIn});
-            console.log("ran")
+
         // clickAnimation.play()
     }
 
-    const CollectionsContainer = styled.div`
+
+    return (
+        <ShowCollectionsContainer ref={button}
+            onClick={handleClick}
+            onMouseEnter={() => setTargeted(true)}
+            onMouseLeave={() => setTargeted(false)} >
+                <TopSquare targeted={targeted} collections={collections}></TopSquare>
+                <MiddleSquare targeted={targeted} collections={collections}></MiddleSquare>
+                <BottomSquare targeted={targeted} collections={collections}></BottomSquare>
+                <TopCircle targeted={targeted} collections={collections}></TopCircle>
+                <LeftCircle targeted={targeted} collections={collections}></LeftCircle>
+                <RightCircle targeted={targeted} collections={collections}></RightCircle>
+                <BottomCircle targeted={targeted} collections={collections}></BottomCircle>
+                <LeftTriangle targeted={targeted} collections={collections}></LeftTriangle>
+                <RightTriangle targeted={targeted} collections={collections}></RightTriangle>
+        </ShowCollectionsContainer>
+    )
+}
+
+
+const ShowCollectionsContainer = styled.div`
     position: relative;
     top: 50%;
     transform: translatey(-50%);
@@ -37,66 +69,66 @@ const ShowCollections: React.FC= () => {
     margin: auto;
     display: flex;
 
-    `
+`
 
-    const Shape = styled.div`
-    background-color: ${ targeted || collections.open ?"#000000" :"#DBDBDB"};
-    border-color: ${ targeted || collections.open ? "#000000" : "#DBDBDB"};
+const Shape = styled.div<IProps>`
     height: 8px;
     width: 8px;
-    border-color: transparent transparent ${ targeted || collections.open ? "#000000" : "#DBDBDB"} transparent;
+    background-color: ${props => props.targeted || props.collections.open ?"#000000" :"#DBDBDB"};
+    border-color: ${props => props.targeted || props.collections.open ? "#000000" : "#DBDBDB"};
+    border-color: transparent transparent ${props => props.targeted || props.collections.open ? "#000000" : "#DBDBDB"} transparent;
     _border-color: #ffffff #ffffff #DBDBDB #ffffff;
-    `
-    const TopSquare = styled(Shape)`
+`
+const TopSquare = styled(Shape)`
     position: absolute;
 
-    ` 
-    const MiddleSquare = styled(Shape)`
+` 
+const MiddleSquare = styled(Shape)`
     position: absolute;
     left: 50%;
     top: 50%;
     transform:  translate(-50%, -50%);
-    ` 
-    const BottomSquare = styled(Shape)`
+` 
+const BottomSquare = styled(Shape)`
     position: absolute;
     right: 0;
     bottom: 0%;
-    ` 
+` 
 
-    const TopCircle = styled(Shape)`
+const TopCircle = styled(Shape)`
     position: absolute;
     left: 50%;
     top: 0;
     border-radius: 50%;
     transform:  translateX(-50%);
 
-    ` 
+` 
 
-    const LeftCircle = styled(Shape)`
+const LeftCircle = styled(Shape)`
     position: absolute;
     top: 50%;
     border-radius: 50%;
     transform: translateY(-50%);
 
-    ` 
+` 
 
-    const RightCircle = styled(Shape)`
+const RightCircle = styled(Shape)`
     position: absolute;
     top: 50%;
     right: 0;
     border-radius: 50%;
     transform: translateY(-50%);
 
-    ` 
-    const BottomCircle = styled(Shape)`
+` 
+const BottomCircle = styled(Shape)`
     position: absolute;
     bottom: 0;
     left: 50%;
     border-radius: 50%;
     transform: translateX(-50%);
-    ` 
+` 
 
-    const LeftTriangle = styled(Shape)`
+const LeftTriangle = styled(Shape)`
     background-color: unset;
     position: absolute;
     bottom: 0;
@@ -107,8 +139,8 @@ const ShowCollections: React.FC= () => {
     border-width: 0 5px 8.7px 5px;
     line-height: 0px;
     _filter: progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');
-    ` 
-    const RightTriangle = styled(Shape)`
+` 
+const RightTriangle = styled(Shape)`
     background-color: unset;
     position: absolute;
     top:0;
@@ -119,25 +151,7 @@ const ShowCollections: React.FC= () => {
     border-width: 0 5px 8.7px 5px;
     line-height: 0px;
     _filter: progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');
-    ` 
-
-    return (
-        <CollectionsContainer ref={button}
-            onClick={handleClick}
-            onMouseEnter={() => setTargeted(true)}
-            onMouseLeave={() => setTargeted(false)} >
-                <TopSquare></TopSquare>
-                <MiddleSquare></MiddleSquare>
-                <BottomSquare></BottomSquare>
-                <TopCircle></TopCircle>
-                <LeftCircle></LeftCircle>
-                <RightCircle></RightCircle>
-                <BottomCircle></BottomCircle>
-                <LeftTriangle></LeftTriangle>
-                <RightTriangle></RightTriangle>
-        </CollectionsContainer>
-    )
-}
+` 
 
 
 

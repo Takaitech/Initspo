@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -196,20 +196,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Collection = ({
   collection
 }) => {
-  const CollectionContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.li.withConfig({
-    displayName: "Collection__CollectionContainer",
-    componentId: "sc-1hi8tgs-0"
-  })(["list-style:none;width:100px;height:100px;background-color:black;margin:40px;display:inline-block;"]);
   return __jsx(CollectionContainer, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 12,
       columnNumber: 9
     }
   });
 };
 
+const CollectionContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.li.withConfig({
+  displayName: "Collection__CollectionContainer",
+  componentId: "sc-1hi8tgs-0"
+})(["list-style:none;width:100px;height:100px;background-color:black;margin:40px;display:inline-block;"]);
 /* harmony default export */ __webpack_exports__["default"] = (Collection);
 
 /***/ }),
@@ -251,15 +251,12 @@ const Collections = () => {
     collections,
     dispatch
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_contexts_CollectionsContext__WEBPACK_IMPORTED_MODULE_3__["CollectionsContext"]);
-  const CollectionsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "Collections__CollectionsContainer",
-    componentId: "tqlujw-0"
-  })(["display:", ";width:calc(100vw - 301px);height:calc(100vh - 90px);margin:0 auto;"], collections.open ? 'block' : "none");
   return __jsx(CollectionsContainer, {
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx(_Grid__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -267,12 +264,16 @@ const Collections = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 13
     }
   }));
 };
 
+const CollectionsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Collections__CollectionsContainer",
+  componentId: "tqlujw-0"
+})(["display:none;width:calc(100vw - 301px);height:calc(100vh - 90px);margin:0 auto;"]);
 /* harmony default export */ __webpack_exports__["default"] = (Collections);
 
 /***/ }),
@@ -344,23 +345,11 @@ const Header = () => {
     0: targeted,
     1: setTargeted
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const HeaderContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "Header__HeaderContainer",
-    componentId: "sc-9h06xe-0"
-  })(["height:90px;position:relative;z-index:2;"]);
-  const Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img.withConfig({
-    displayName: "Header__Logo",
-    componentId: "sc-9h06xe-1"
-  })(["width:250px;position:absolute;bottom:-9px;left:5px;"]);
-  const LogoExtended = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img.withConfig({
-    displayName: "Header__LogoExtended",
-    componentId: "sc-9h06xe-2"
-  })(["display:", ";position:absolute;bottom:-195px;left:47px;width:61px;"], targeted ? "block" : "none");
   return __jsx(HeaderContainer, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 14,
       columnNumber: 5
     }
   }, __jsx(Logo, {
@@ -370,20 +359,33 @@ const Header = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 15,
       columnNumber: 9
     }
   }), __jsx(LogoExtended, {
+    targeted: targeted,
     src: "images/Logo-extended.png",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 18,
       columnNumber: 9
     }
   }));
 };
 
+const HeaderContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Header__HeaderContainer",
+  componentId: "sc-9h06xe-0"
+})(["height:90px;position:relative;z-index:2;"]);
+const Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img.withConfig({
+  displayName: "Header__Logo",
+  componentId: "sc-9h06xe-1"
+})(["width:250px;position:absolute;bottom:-9px;left:5px;"]);
+const LogoExtended = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img.withConfig({
+  displayName: "Header__LogoExtended",
+  componentId: "sc-9h06xe-2"
+})(["display:", ";position:absolute;bottom:-195px;left:47px;width:61px;"], props => props.targeted ? "block" : "none");
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
 /***/ }),
@@ -455,16 +457,14 @@ var _jsxFileName = "/Users/takaitech/Takai-Tech/initspo/src/components/Inspirati
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+;
+;
 
 const Inspiration = ({
   content
 }) => {
-  const BoxContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.li.withConfig({
-    displayName: "Inspiration__BoxContainer",
-    componentId: "oyhmy1-0"
-  })(["width:", "px;height:", "px;max-height:150px;margin:10px;background-image:url(", ");background-size:cover;list-style:none;display:inline-block;background-repeat:no-repeat;float:left;background-position:center;"], content.dimensions.width / 4, content.dimensions.height / 4, props => props.url);
   return __jsx(BoxContainer, {
-    url: content.url,
+    content: content,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -474,6 +474,10 @@ const Inspiration = ({
   });
 };
 
+const BoxContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.li.withConfig({
+  displayName: "Inspiration__BoxContainer",
+  componentId: "oyhmy1-0"
+})(["width:", "px;height:", "px;max-height:150px;margin:10px;background-image:url(", ");background-size:cover;list-style:none;background-repeat:no-repeat;float:left;background-position:center;"], props => props.content.dimensions.width / 4, props => props.content.dimensions.height / 4, props => props.content.url);
 /* harmony default export */ __webpack_exports__["default"] = (Inspiration);
 
 /***/ }),
@@ -531,15 +535,12 @@ const Inspirations = () => {
     collections,
     dispatch
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_contexts_CollectionsContext__WEBPACK_IMPORTED_MODULE_3__["CollectionsContext"]);
-  const InspirationsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "Inspirations__InspirationsContainer",
-    componentId: "sc-5potf-0"
-  })(["display:", ";width:calc(100vw - 301px);height:calc(100vh - 90px);margin:0 auto;border:#E8E8E8 1px solid;text-align:center;"], collections.open ? "none" : 'block');
   return __jsx(InspirationsContainer, {
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx(_Grid__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -547,12 +548,16 @@ const Inspirations = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 27,
       columnNumber: 13
     }
   }));
 };
 
+const InspirationsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Inspirations__InspirationsContainer",
+  componentId: "sc-5potf-0"
+})(["display:", ";width:calc(100vw - 301px);height:calc(100vh - 90px);margin:0 auto;border:#E8E8E8 1px solid;text-align:center;"], props => props.collections.open ? "none" : 'block');
 /* harmony default export */ __webpack_exports__["default"] = (Inspirations);
 
 /***/ }),
@@ -721,15 +726,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _contexts_CollectionsContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../contexts/CollectionsContext */ "./src/contexts/CollectionsContext.tsx");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap */ "gsap");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(gsap__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/takaitech/Takai-Tech/initspo/src/components/Nav/ShowCollections.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
+;
 
 const ShowCollections = () => {
   const {
@@ -741,69 +744,25 @@ const ShowCollections = () => {
     dispatch
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_contexts_CollectionsContext__WEBPACK_IMPORTED_MODULE_2__["CollectionsContext"]);
   let button = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null); // console.log(button)
+  // let Anim = TweenMax.to(button.current, 2, {position: 'fixed', xPercent: '-50', left: '50%',
+  //     ease: Power3.easeIn, paused: true});
+  //     console.log(button)
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {// console.log(button.current)
-  }, [button]); // console.log(clickAnimation)
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {// if(collections.open === true) {
+    //     Anim.play()
+    // }else {
+    //     Anim.reverse()
+    // }
+  }, [collections]); // console.log(clickAnimation)
 
   let handleClick = () => {
-    console.log(button.current);
     dispatch({
       type: "openCollections",
       boolean: !collections.open
-    });
-    console.log(button.current);
-    gsap__WEBPACK_IMPORTED_MODULE_3__["TweenMax"].to(button.current, 2, {
-      x: 400,
-      ease: gsap__WEBPACK_IMPORTED_MODULE_3__["Power3"].easeIn
-    });
-    console.log("ran"); // clickAnimation.play()
+    }); // clickAnimation.play()
   };
 
-  const CollectionsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "ShowCollections__CollectionsContainer",
-    componentId: "sc-19w2inw-0"
-  })(["position:relative;top:50%;transform:translatey(-50%);height:60px;width:60px;margin:auto;display:flex;"]);
-  const Shape = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-    displayName: "ShowCollections__Shape",
-    componentId: "sc-19w2inw-1"
-  })(["background-color:", ";border-color:", ";height:8px;width:8px;border-color:transparent transparent ", " transparent;_border-color:#ffffff #ffffff #DBDBDB #ffffff;"], targeted || collections.open ? "#000000" : "#DBDBDB", targeted || collections.open ? "#000000" : "#DBDBDB", targeted || collections.open ? "#000000" : "#DBDBDB");
-  const TopSquare = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__TopSquare",
-    componentId: "sc-19w2inw-2"
-  })(["position:absolute;"]);
-  const MiddleSquare = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__MiddleSquare",
-    componentId: "sc-19w2inw-3"
-  })(["position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);"]);
-  const BottomSquare = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__BottomSquare",
-    componentId: "sc-19w2inw-4"
-  })(["position:absolute;right:0;bottom:0%;"]);
-  const TopCircle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__TopCircle",
-    componentId: "sc-19w2inw-5"
-  })(["position:absolute;left:50%;top:0;border-radius:50%;transform:translateX(-50%);"]);
-  const LeftCircle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__LeftCircle",
-    componentId: "sc-19w2inw-6"
-  })(["position:absolute;top:50%;border-radius:50%;transform:translateY(-50%);"]);
-  const RightCircle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__RightCircle",
-    componentId: "sc-19w2inw-7"
-  })(["position:absolute;top:50%;right:0;border-radius:50%;transform:translateY(-50%);"]);
-  const BottomCircle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__BottomCircle",
-    componentId: "sc-19w2inw-8"
-  })(["position:absolute;bottom:0;left:50%;border-radius:50%;transform:translateX(-50%);"]);
-  const LeftTriangle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__LeftTriangle",
-    componentId: "sc-19w2inw-9"
-  })(["background-color:unset;position:absolute;bottom:0;left:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
-  const RightTriangle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
-    displayName: "ShowCollections__RightTriangle",
-    componentId: "sc-19w2inw-10"
-  })(["background-color:unset;position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
-  return __jsx(CollectionsContainer, {
+  return __jsx(ShowCollectionsContainer, {
     ref: button,
     onClick: handleClick,
     onMouseEnter: () => setTargeted(true),
@@ -811,75 +770,137 @@ const ShowCollections = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, __jsx(TopSquare, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129,
+      lineNumber: 49,
       columnNumber: 17
     }
   }), __jsx(MiddleSquare, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 50,
       columnNumber: 17
     }
   }), __jsx(BottomSquare, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131,
+      lineNumber: 51,
       columnNumber: 17
     }
   }), __jsx(TopCircle, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 52,
       columnNumber: 17
     }
   }), __jsx(LeftCircle, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 53,
       columnNumber: 17
     }
   }), __jsx(RightCircle, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134,
+      lineNumber: 54,
       columnNumber: 17
     }
   }), __jsx(BottomCircle, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
+      lineNumber: 55,
       columnNumber: 17
     }
   }), __jsx(LeftTriangle, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136,
+      lineNumber: 56,
       columnNumber: 17
     }
   }), __jsx(RightTriangle, {
+    targeted: targeted,
+    collections: collections,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137,
+      lineNumber: 57,
       columnNumber: 17
     }
   }));
 };
 
+const ShowCollectionsContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "ShowCollections__ShowCollectionsContainer",
+  componentId: "sc-19w2inw-0"
+})(["position:relative;top:50%;transform:translatey(-50%);height:60px;width:60px;margin:auto;display:flex;"]);
+const Shape = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "ShowCollections__Shape",
+  componentId: "sc-19w2inw-1"
+})(["height:8px;width:8px;background-color:", ";border-color:", ";border-color:transparent transparent ", " transparent;_border-color:#ffffff #ffffff #DBDBDB #ffffff;"], props => props.targeted || props.collections.open ? "#000000" : "#DBDBDB", props => props.targeted || props.collections.open ? "#000000" : "#DBDBDB", props => props.targeted || props.collections.open ? "#000000" : "#DBDBDB");
+const TopSquare = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__TopSquare",
+  componentId: "sc-19w2inw-2"
+})(["position:absolute;"]);
+const MiddleSquare = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__MiddleSquare",
+  componentId: "sc-19w2inw-3"
+})(["position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);"]);
+const BottomSquare = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__BottomSquare",
+  componentId: "sc-19w2inw-4"
+})(["position:absolute;right:0;bottom:0%;"]);
+const TopCircle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__TopCircle",
+  componentId: "sc-19w2inw-5"
+})(["position:absolute;left:50%;top:0;border-radius:50%;transform:translateX(-50%);"]);
+const LeftCircle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__LeftCircle",
+  componentId: "sc-19w2inw-6"
+})(["position:absolute;top:50%;border-radius:50%;transform:translateY(-50%);"]);
+const RightCircle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__RightCircle",
+  componentId: "sc-19w2inw-7"
+})(["position:absolute;top:50%;right:0;border-radius:50%;transform:translateY(-50%);"]);
+const BottomCircle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__BottomCircle",
+  componentId: "sc-19w2inw-8"
+})(["position:absolute;bottom:0;left:50%;border-radius:50%;transform:translateX(-50%);"]);
+const LeftTriangle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__LeftTriangle",
+  componentId: "sc-19w2inw-9"
+})(["background-color:unset;position:absolute;bottom:0;left:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
+const RightTriangle = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Shape).withConfig({
+  displayName: "ShowCollections__RightTriangle",
+  componentId: "sc-19w2inw-10"
+})(["background-color:unset;position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 5px 8.7px 5px;line-height:0px;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');"]);
 /* harmony default export */ __webpack_exports__["default"] = (ShowCollections);
 
 /***/ }),
@@ -1087,7 +1108,7 @@ const collectionsReducer = (initState, action) => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*******************************!*\
   !*** multi ./pages/index.tsx ***!
   \*******************************/
@@ -1096,17 +1117,6 @@ const collectionsReducer = (initState, action) => {
 
 module.exports = __webpack_require__(/*! /Users/takaitech/Takai-Tech/initspo/pages/index.tsx */"./pages/index.tsx");
 
-
-/***/ }),
-
-/***/ "gsap":
-/*!***********************!*\
-  !*** external "gsap" ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("gsap");
 
 /***/ }),
 

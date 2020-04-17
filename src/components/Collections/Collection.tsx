@@ -8,7 +8,13 @@ interface Props {
 
 const Collection: React.FC<Props> = ({collection}) => {
     
-    const CollectionContainer = styled.li`
+    return (
+        <CollectionContainer>
+        </CollectionContainer>
+    );
+}
+
+const CollectionContainer = styled.li`
         list-style: none;
         width: 100px;
         height: 100px;
@@ -16,12 +22,5 @@ const Collection: React.FC<Props> = ({collection}) => {
         margin: 40px;
         display: inline-block;
     `
-    
-    return (
-        <CollectionContainer>
-
-        </CollectionContainer>
-    );
-}
 
 export default Collection
