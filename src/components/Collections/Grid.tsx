@@ -1,4 +1,5 @@
 import Collection from './Collection'
+import { useState } from 'react';
 
 interface Content {
     photo: string
@@ -9,10 +10,11 @@ interface Props {
 }
 
 const Grid: React.FC<Props> = ({CollectionsList}) => {
+    
         return (
             <ul>
                 {CollectionsList.map((collection, index) => (
-                    <Collection key={index} collection={collection}></Collection>
+                    <Collection key={index} collection={collection} ></Collection>
                 ))}
             </ul>
         );

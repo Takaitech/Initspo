@@ -17,13 +17,13 @@ const ShowCollections: React.FC= () => {
     const { collections, dispatch } = useContext(CollectionsContext);
 
     let button = useRef<HTMLDivElement>(null);
-    // console.log(button)
+    console.log(button)
 
 
     // let Anim = TweenMax.to(button.current, 2, {position: 'fixed', xPercent: '-50', left: '50%',
-    //     ease: Power3.easeIn, paused: true});
+    //     ease: Power3.easeIn, transform: "scale(10)", paused: true});
 
-    //     console.log(button)
+        console.log(button)
     useEffect(() => {
 
         // if(collections.open === true) {
@@ -33,11 +33,9 @@ const ShowCollections: React.FC= () => {
         // }
     },[collections])
 
-    // console.log(clickAnimation)
     let handleClick = () => {
         dispatch({type: "openCollections", boolean: !collections.open})
 
-        // clickAnimation.play()
     }
 
 

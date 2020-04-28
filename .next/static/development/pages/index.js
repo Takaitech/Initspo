@@ -3601,7 +3601,7 @@ var Grid = function Grid(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 15,
       columnNumber: 13
     }
   }, CollectionsList.map(function (collection, index) {
@@ -3611,7 +3611,7 @@ var Grid = function Grid(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 17,
         columnNumber: 21
       }
     });
@@ -3719,23 +3719,36 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var Grid = function Grid(_ref) {
   var gridContent = _ref.gridContent;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      showGrid = _useState[0],
+      setShowGrid = _useState[1];
+
+  var selectInspo = function selectInspo(event) {
+    setShowGrid(!showGrid);
+    console.log(showGrid);
+  };
+
   return __jsx(GridContainer, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 27,
       columnNumber: 9
     }
   }, gridContent.map(function (content, index) {
     return __jsx(_Inspiration__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: index,
       content: content,
+      onClick: selectInspo,
+      showGrid: showGrid,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 29,
         columnNumber: 17
       }
     });
@@ -3768,17 +3781,35 @@ var _this = undefined,
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+
 ;
 ;
 
 var Inspiration = function Inspiration(_ref) {
-  var content = _ref.content;
+  var content = _ref.content,
+      onClick = _ref.onClick,
+      showGrid = _ref.showGrid;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      selected = _useState[0],
+      setSelected = _useState[1];
+
+  var handleClick = function handleClick(event) {
+    onClick(event);
+    setSelected(!selected);
+  };
+
   return __jsx(BoxContainer, {
     content: content,
+    onClick: function onClick(event) {
+      return handleClick(event);
+    },
+    showGrid: showGrid,
+    selected: selected,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 42,
       columnNumber: 13
     }
   });
@@ -3787,12 +3818,16 @@ var Inspiration = function Inspiration(_ref) {
 var BoxContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li.withConfig({
   displayName: "Inspiration__BoxContainer",
   componentId: "oyhmy1-0"
-})(["width:", "px;height:", "px;max-height:150px;margin:10px;background-image:url(", ");background-size:cover;list-style:none;background-repeat:no-repeat;float:left;background-position:center;"], function (props) {
-  return props.content.dimensions.width / 4;
+})(["width:", ";height:", ";max-height:", ";margin:10px;background-image:url(", ");background-size:cover;list-style:none;background-repeat:no-repeat;float:left;background-position:center;display:", ""], function (props) {
+  return props.selected ? '100%' : props.content.dimensions.width / 4 + 'px';
 }, function (props) {
-  return props.content.dimensions.height / 4;
+  return props.selected ? "400px" : props.content.dimensions.height / 4 + 'px';
+}, function (props) {
+  return props.selected ? "unset" : '150px';
 }, function (props) {
   return props.content.url;
+}, function (props) {
+  return props.showGrid || props.selected ? "inline-block" : 'none';
 });
 /* harmony default export */ __webpack_exports__["default"] = (Inspiration);
 
@@ -4066,23 +4101,23 @@ var ShowCollections = function ShowCollections() {
       collections = _useContext.collections,
       dispatch = _useContext.dispatch;
 
-  var button = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null); // console.log(button)
-  // let Anim = TweenMax.to(button.current, 2, {position: 'fixed', xPercent: '-50', left: '50%',
-  //     ease: Power3.easeIn, paused: true});
-  //     console.log(button)
+  var button = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  console.log(button); // let Anim = TweenMax.to(button.current, 2, {position: 'fixed', xPercent: '-50', left: '50%',
+  //     ease: Power3.easeIn, transform: "scale(10)", paused: true});
 
+  console.log(button);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {// if(collections.open === true) {
     //     Anim.play()
     // }else {
     //     Anim.reverse()
     // }
-  }, [collections]); // console.log(clickAnimation)
+  }, [collections]);
 
   var handleClick = function handleClick() {
     dispatch({
       type: "openCollections",
       "boolean": !collections.open
-    }); // clickAnimation.play()
+    });
   };
 
   return __jsx(ShowCollectionsContainer, {
@@ -4097,7 +4132,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 43,
       columnNumber: 9
     }
   }, __jsx(TopSquare, {
@@ -4106,7 +4141,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 47,
       columnNumber: 17
     }
   }), __jsx(MiddleSquare, {
@@ -4115,7 +4150,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 48,
       columnNumber: 17
     }
   }), __jsx(BottomSquare, {
@@ -4124,7 +4159,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 49,
       columnNumber: 17
     }
   }), __jsx(TopCircle, {
@@ -4133,7 +4168,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 50,
       columnNumber: 17
     }
   }), __jsx(LeftCircle, {
@@ -4142,7 +4177,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 51,
       columnNumber: 17
     }
   }), __jsx(RightCircle, {
@@ -4151,7 +4186,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 52,
       columnNumber: 17
     }
   }), __jsx(BottomCircle, {
@@ -4160,7 +4195,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 53,
       columnNumber: 17
     }
   }), __jsx(LeftTriangle, {
@@ -4169,7 +4204,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 54,
       columnNumber: 17
     }
   }), __jsx(RightTriangle, {
@@ -4178,7 +4213,7 @@ var ShowCollections = function ShowCollections() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 55,
       columnNumber: 17
     }
   }));
@@ -4446,7 +4481,7 @@ var collectionsReducer = function collectionsReducer(initState, action) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Ftakaitech%2FTakai-Tech%2Finitspo%2Fpages%2Findex.tsx ***!
   \********************************************************************************************************************************/
@@ -4469,5 +4504,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
